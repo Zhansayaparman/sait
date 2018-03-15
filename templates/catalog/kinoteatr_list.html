@@ -1,0 +1,19 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Kinoteatr List</h1>
+
+    {% if kinoteatr_list %}
+    <ul>
+
+      {% for kinoteatr in kinoteatr_list %}
+      <li>
+        <a href="{{kinoteatr.get_absolute_url}}">{{ kinoteatr.kino_name}} {{kinoteatr.kino_address}} </a>
+      </li>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+      <p>! </p>
+    {% endif %}       
+{% endblock %}
